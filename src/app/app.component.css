@@ -1,0 +1,172 @@
+md-toolbar {
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.mat-button, .mat-fab {
+  min-width: auto;
+  font-size: 2em;
+}
+
+.mat-fab.mat-accent {
+  background-color: #009688;
+  color: white;
+}
+
+.content {
+  padding-top: 2em;
+  position: relative;
+}
+
+.container-progress-bar {
+  height: 5px;
+  margin-bottom: .5em;
+}
+
+.container-game {
+  width: 400px;
+}
+
+.container-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.info-game {
+  margin-bottom: .5em;
+  text-align: center;
+  position: relative;
+}
+
+.refresh {
+  position: absolute;
+  right: 0px;
+}
+
+.container-score {
+  height: 45px;
+  line-height: 45px;
+  margin-bottom: 1em;
+}
+
+.container-score span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -25px;
+  font-size: 2em;
+  margin-right: 15px;
+}
+
+.container-score div.coin {
+  display: inline-block;
+}
+
+table {
+  border-collapse: collapse;
+  margin: auto;
+  background-color: green;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 22px 43px 0 rgba(0,0,0,.3);
+  box-shadow: 0 22px 43px 0 rgba(0,0,0,.3);
+}
+
+table td {
+  border: 1px solid black;
+  padding: 5px;
+  cursor: pointer;
+}
+
+table tr:first-child td {
+  border-top: 0;
+}
+
+table tr:last-child td {
+  border-bottom: 0;
+}
+
+table tr td:first-child {
+  border-left: 0;
+}
+
+table tr td:last-child {
+  border-right: 0;
+}
+
+.empty {
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.empty.black-empty:hover {
+  background-color: black;
+  opacity: .8;
+}
+
+.empty.white-empty:hover {
+  background-color: white;
+  opacity: .8;
+}
+
+.coin {
+  content: "";
+  width: 40px; 
+  height: 40px;
+  position: relative;
+  border-radius: 100%;
+  z-index: 1;
+}
+
+.coin:after {
+  content: "";
+  width: 30px; 
+  height: 30px;
+  display: block;
+  top: 4px;
+  left: 4px;
+  position: absolute;
+  border-radius: 100%;
+  z-index: 2;
+}
+
+.coin:before {
+  content: "";
+  width: 38px; 
+  height: 38px;
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  z-index: 1;
+}
+
+.white {
+  background: linear-gradient(45deg, rgba(214,214,214,1) 0%, rgba(255,255,255,1) 50%, rgba(214,214,214,1) 100%); 
+}
+
+.white:before {
+  background: linear-gradient(45deg, rgba(214,214,214,1) 0%, rgba(255,255,255,1) 50%, rgba(214,214,214,1) 100%);
+  border: 1px solid rgba(0,0,0,0.7);
+}
+
+.white:after {
+  background: linear-gradient(45deg, rgba(214,214,214,1) 0%, rgba(255,255,255,1) 50%, rgba(214,214,214,1) 100%);
+  border: 1px solid rgba(0,0,0,0.7);
+}
+
+.black {
+  background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(99,97,97,1) 50%, rgba(0,0,0,1) 100%);
+}
+
+.black:before {
+  background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(99,97,97,1) 50%, rgba(0,0,0,1) 100%);
+  border: 1px solid rgba(0,0,0,0.7);
+}
+
+.black:after {
+  background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(99,97,97,1) 50%, rgba(0,0,0,1) 100%);
+  border: 1px solid rgba(0,0,0,0.7);
+}

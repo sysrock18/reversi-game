@@ -1,0 +1,64 @@
+<md-toolbar color="primary">
+
+    <span>Reversi</span>
+    <span class="spacer"></span>
+    <a md-button href="https://github.com/sysrock18" target="blank">
+      <i class="icon icon ion-social-github"></i>
+    </a>
+    <a md-button href="https://www.linkedin.com/in/simon-gonzalez-acosta-ing/" target="blank">
+      <i class="icon icon ion-social-linkedin"></i>
+    </a>
+    <a md-button (click)="showAbout()">
+      <i class="icon icon ion-android-happy"></i>
+    </a>
+
+</md-toolbar>
+
+<div class="content">
+
+  <!-- Progress Bar -->
+  <div class="container-progress-bar container-game container-center">
+    <md-progress-bar
+      color="primary"
+      mode="indeterminate"
+      *ngIf="loader">
+    </md-progress-bar>
+  </div>
+
+  <!-- Info Game -->
+  <div class="info-game container-game container-center" [hidden]="!this.gameState.boardRows">
+    <div *ngIf="gameState.gameState == consts.IN_COURSE">
+      <strong>Turno:</strong>
+      {{ consts[gameState.currentPlayer] }}
+    </div>
+
+    <div *ngIf="gameState.gameState == consts.FINALIZED">
+      <strong>{{ gameResult.result | uppercase }}</strong>
+      <span *ngIf="gameResult.winner">{{ gameResult.winner }}</span>
+    </div>
+
+    <button class="refresh" md-fab (click)="confirmRestart()">
+      <i class="icon ion-refresh"></i>
+    </button>
+  </div>
+
+  <!-- Score -->
+  <div class="container-score container-game container-center" [hidden]="!this.gameState.boardRows">
+
+    <div class="coin black"></div>
+    <span>{{ this.gameState.blackCount }}</span>
+    <div class="coin white"></div>
+    <span>{{ this.gameState.whiteCount }}</span>
+
+  </div>
+
+  <!-- Game Board -->
+  <table [hidden]="!this.gameState.boardRows">
+    <tr *ngFor="let row of this.gameState.boardRows; let y = index">
+        <td *ngFor="let field of row; let x = index" (click)="makeMovement(x, y)">
+          <div [ngClass]="getCSSClassesBoardCell(field)"></div>
+        </td>
+    </tr>
+  </table>
+
+</div>
